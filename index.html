@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Selenium Login</title>
+</head>
+
+<body>
+
+    <!-- Home Page -->
+    <div id="homepage">
+        <h1>Welcome!</h1>
+        <a id="get-started" onclick="openLogin()">Get started</a>
+    </div>
+
+    <!-- Login Page -->
+    <div id="loginPage" style="display: none;">
+        <h2>Login Page</h2>
+
+        <label>Email:</label>
+        <input type="email" id="email">
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+        <br><br>
+
+        <button onclick="login()">Login</button>
+
+        <p id="error" style="color:red; display:none;">
+            Invalid credentials!
+        </p>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" style="display: none;">
+        <h2>Dashboard</h2>
+        <p>Login successful! This is your dashboard.</p>
+    </div>
+
+    <script>
+        function openLogin() {
+            document.getElementById("homepage").style.display = "none";
+            document.getElementById("loginPage").style.display = "block";
+        }
+
+        function login() {
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("password").value;
+
+            if (email === "abc@gmail.com" && pass === "password") {
+                document.getElementById("loginPage").style.display = "none";
+                document.getElementById("dashboard").style.display = "block";
+            } else {
+                document.getElementById("error").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
