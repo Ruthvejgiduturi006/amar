@@ -11,15 +11,15 @@ pipeline {
 
         stage('Compile') {
             steps {
-                echo 'Compiling Java files...'
-                sh 'javac Main.java'
+                echo 'Compiling Java file...'
+                bat 'javac Main.java'
             }
         }
 
         stage('Run') {
             steps {
                 echo 'Running Java Program...'
-                sh 'java Main'
+                bat 'java Main'
             }
         }
     }
